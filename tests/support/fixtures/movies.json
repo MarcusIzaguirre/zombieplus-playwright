@@ -1,0 +1,83 @@
+{
+    "create": {
+      "title": "Guerra Mundial Z",
+      "overview": "Um ex-investigador da ONU embarca em uma corrida contra o tempo para impedir uma pandemia global que transforma humanos em zumbis vorazes.",
+      "company": "Paramount Pictures",
+      "release_year": 2013,
+      "featured": false,
+      "cover": "images/world_war_z.png"
+    },
+    "madrugada_dos_mortos": {
+      "title": "Madrugada dos Mortos",
+      "overview": "Um grupo de sobreviventes se refugia em um shopping center enquanto uma praga zumbi devasta o mundo exterior.",
+      "company": "Universal Pictures",
+      "release_year": 2004,
+      "featured": false,
+      "cover": "images/dawn_of_the_dead.png"
+    },
+    "exterminio": {
+      "title": "Extermínio",
+      "overview": "Um vírus mortal dizima a população da Inglaterra, transformando os infectados em criaturas sedentas por sangue.",
+      "company": "Fox Searchlight Pictures",
+      "release_year": 2002,
+      "featured": false,
+      "cover": "images/28_days_later.png"
+    },
+    "resident_evil_o_hospede_maldito": {
+      "title": "Resident Evil: O Hóspede Maldito",
+      "overview": "Uma equipe de elite investiga uma instalação subterrânea onde um vírus letal foi liberado, transformando os funcionários em zumbis.",
+      "company": "Screen Gems",
+      "release_year": 2002,
+      "featured": false,
+      "cover": "images/resident_evil.png"
+    },
+    "a_noite_dos_mortos_vivos": {
+      "title": "A Noite dos Mortos-Vivos",
+      "overview": "Clássico do terror sobre um grupo de pessoas presas em uma casa de fazenda, cercadas por zumbis.",
+      "company": "The Walter Reade Organization",
+      "release_year": 1968,
+      "featured": false,
+      "cover": "images/night_of_the_living_dead.png"
+    },
+    "zumbilandia": {
+      "title": "Zumbilândia",
+      "overview": "Um grupo improvável de sobreviventes tenta encontrar refúgio em meio a um apocalipse zumbi com muito humor e ação.",
+      "company": "Columbia Pictures",
+      "release_year": 2009,
+      "featured": false,
+      "cover": "images/zombieland.png"
+    },
+    "rec": {
+      "title": "REC",
+      "overview": "Uma jornalista e seu cinegrafista ficam presos em um prédio em quarentena após a propagação de um vírus mortal.",
+      "company": "Filmax International",
+      "release_year": 2007,
+      "featured": false,
+      "cover": "images/rec.png"
+    },
+    "o_exterminio_2": {
+      "title": "O Extermínio 2",
+      "overview": "Seis meses após a epidemia devastar a Grã-Bretanha, um grupo de refugiados tenta reconstruir a sociedade, mas o vírus retorna.",
+      "company": "Fox Atomic",
+      "release_year": 2007,
+      "featured": false,
+      "cover": "images/28_weeks_later.png"
+    },
+    "eu_sou_a_lenda": {
+      "title": "Eu Sou a Lenda",
+      "overview": "Um cientista é o último sobrevivente em Nova York após um vírus transformar a humanidade em criaturas sedentas por sangue.",
+      "company": "Warner Bros.",
+      "release_year": 2007,
+      "featured": false,
+      "cover": "images/i_am_legend.png"
+    },
+    "todo_mundo_quase_morto": {
+      "title": "Todo Mundo Quase Morto",
+      "overview": "Um preguiçoso precisa enfrentar um apocalipse zumbi para salvar sua mãe, namorada e amigos, misturando terror e comédia.",
+      "company": "Universal Pictures",
+      "release_year": 2004,
+      "featured": false,
+      "cover": "images/shaun_of_the_dead.png"
+    }
+  }
+  
