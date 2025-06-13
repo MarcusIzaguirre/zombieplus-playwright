@@ -1,29 +1,21 @@
 //import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 const { test, expect } = require('../support')
+import { executeSQL } from '../support/database';
 
-// const { LandingPage } = require('../pages/LandingPage')
-// import { Toast } from '../pages/Components';
-
-// let landingPage
-// let toast
-
-
-// test.beforeEach(async ({ page }) => {
-//   landingPage = new LandingPage(page)
-//   toast = new Toast(page)
-// })
-
-
+test.beforeAll(async () => {
+    await executeSQL(`DELETE from public.leads`)
+})
 
 test('TC 01: Deve cadastrar um lead na fila de espera', async ({ page }) => {
   const leadName = faker.person.fullName()
   const leadEmail = faker.internet.email()
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadForm(leadName, leadEmail)
-  const message = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!"
-  await page.toast.containText(message)
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadForm(leadName, leadEmail)
+  const message = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato."
+  await page.popup.haveText(message)
+  //await page.toast.containText(message) //vai morrer
 
 
   //await page.waitForTimeout(6000)
@@ -52,51 +44,51 @@ test('TC 02: Não deve cadastrar quando o email já existe', async ({ page, requ
 
   expect(newLead.ok()).toBeTruthy()
 
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadForm(leadName, leadEmail)
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadForm(leadName, leadEmail)
 
-  const message = "O endereço de e-mail fornecido já está registrado em nossa fila de espera."
-  await page.toast.containText(message)
+  const message = "Verificamos que o endereço de e-mail fornecido já consta em nossa lista de espera. Isso significa que você está um passo mais perto de aproveitar nossos serviços."
+  await page.popup.haveText(message)
 
 });
 
-test('TC 02: Não deve cadastrar com email incorreto', async ({ page }) => {
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadForm('Name 2', 'Test.test1.com')
+test('TC 03: Não deve cadastrar com email incorreto', async ({ page }) => {
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadForm('Name 2', 'Test.test1.com')
   const message = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!"
-  await page.landing.alertHaveText('Email incorreto')
+  await page.leads.alertHaveText('Email incorreto')
 
 });
 
 test('TC 03: Não deve cadastrar quando o nome não é preenchido', async ({ page }) => {
 
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadForm('', 'Test@test1.com')
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadForm('', 'Test@test1.com')
   //const message = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!"
-  await page.landing.alertHaveText('Campo obrigatório')
+  await page.leads.alertHaveText('Campo obrigatório')
 
 });
 
 test('TC 04: Não deve cadastrar quando o email não é preenchido', async ({ page }) => {
   //const landingPage = new LandingPage()
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadForm('Name 3', '')
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadForm('Name 3', '')
   //const message = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!"
-  await page.landing.alertHaveText('Campo obrigatório')
+  await page.leads.alertHaveText('Campo obrigatório')
 
 });
 
 test('TC 05: Não deve cadastrar quando o nenhum campo é preenchido', async ({ page }) => {
   //const landingPage = new LandingPage()
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadForm('Name 2', 'Test.test1.com')
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadForm('Name 2', 'Test.test1.com')
   //const message = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!"
-  await page.landing.alertHaveText(['Campo obrigatório', 'Campo obrigatório'])
+  await page.leads.alertHaveText(['Campo obrigatório', 'Campo obrigatório'])
 
   //await expect(page.locator('.alert')).toHaveText(['Campo obrigatório', 'Campo obrigatório'])
 
